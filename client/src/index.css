@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme {
+  --color-diamond-light: #e0f2fe;
+  --color-diamond: #0ea5e9;
+  --color-diamond-dark: #0369a1;
+  --color-navy-light: #1e293b;
+  --color-navy: #0f172a;
+  --color-navy-dark: #020617;
+
+  --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+:root {
+  --primary-diamond: #0ea5e9;
+  --secondary-navy: #0f172a;
+  --bg-white: #ffffff;
+}
+
+body {
+  @apply bg-white text-navy font-sans antialiased;
+}
+
+/* Glassmorphism Classes */
+.glass {
+  @apply bg-white/20 backdrop-blur-lg border border-white/30 shadow-glass rounded-2xl;
+}
+
+.glass-dark {
+  @apply bg-navy/20 backdrop-blur-lg border border-navy/30 shadow-glass rounded-2xl;
+}
+
+/* Button Gradients */
+.btn-gradient {
+  @apply bg-linear-to-r from-diamond to-diamond-dark text-white px-6 py-2.5 rounded-full font-semibold transition-all duration-300 hover:shadow-lg active:scale-95;
+}
+
+/* Animations & Transitions */
+.smooth-hover {
+  @apply transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-xl;
+}
+
+/* Floating Component */
+.floating {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
