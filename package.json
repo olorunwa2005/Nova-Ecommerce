@@ -4,6 +4,7 @@
     "description": "Nova E-Commerce Monorepo",
     "main": "index.js",
     "scripts": {
+        "build": "cd client && npm install && npm run build",
         "client": "npm run dev --prefix client",
         "server": "npm run dev --prefix server",
         "dev": "concurrently \"npm run client\" \"npm run server\"",
